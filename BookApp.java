@@ -1,4 +1,4 @@
-package com.constructor;
+package com.java;
 
 public class BookApp {
     public static void main(String[] args){

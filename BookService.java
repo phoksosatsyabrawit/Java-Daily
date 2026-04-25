@@ -1,4 +1,4 @@
-package com.constructor;
+package com.java;
 import java.util.Scanner;
 
 public class BookService {
