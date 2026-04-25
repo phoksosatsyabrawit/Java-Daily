@@ -13,8 +13,7 @@ public class methodOverload {
         
         printvarArg(3,5,7,9,11);
         printvarArg("phok.sosatsyabravit, ", "bill.gate, ", "steve.job, ","mark.zuckaberg");
-        double[] price = new double[] {2.3,1.2,2.2,1.3,1.5};
-        printvarArg("Coke: ", price);
+        printvarArg("Coke: ", 2.3,1.2,2.2,1.3,1.5);
     }
 
     public static void print(String text){
