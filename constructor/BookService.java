@@ -1,4 +1,4 @@
-package com.java;
+package com.java.constructor;
 import java.util.Scanner;
 
 public class BookService {
@@ -13,10 +13,9 @@ public class BookService {
 
     public Book createBook(){
         //input, title, author, price
-        BookMethod bookmethod = new BookMethod();
-        String title = bookmethod.getString("Please input Title: ");
-        String author = bookmethod.getString("Please input Author: ");
-        Double price = bookmethod.getDouble("Please input Price: ");
+        String title = BookMethod.getString("Please input Title: ");
+        String author = BookMethod.getString("Please input Author: ");
+        Double price = BookMethod.getDouble("Please input Price: ");
         Book book = new Book(title, author, price);
         return book;
     }
@@ -27,5 +26,28 @@ public class BookService {
             System.out.println(books[i].toStr());
             //System.out.println("Book: [Title:" + books[i].getTitle() + "] [Author: " + books[i].getAuthor() + "] [Price: " + books[i].getPrice() + "]");
         }
+    }
+    
+    // bubble sort algorithm
+    /*public Book[] sortbyPrice(Book[] books){
+        for(int i=0; i<books.length; i++){
+            for(int j=i+1; j<books.length; j++){
+                if(books[i].getPrice() > books[j].getPrice()){
+                    Book temp = books[i];
+                    books[i] = books[j];
+                    books[j] = temp;
+                }
+            }
+        }
+        return books;
+    }*/
+
+    public double getAmout(Book[] books){
+        double amount = 0;
+        for(int i=0; i<books.length; i++){
+            amount = amount + books[i].getPrice();
+            i++;
+        }
+        return amount;
     }
 }

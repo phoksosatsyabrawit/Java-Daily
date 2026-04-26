@@ -1,7 +1,7 @@
-package com.java;
+package com.java.constructor;
 import java.util.Scanner;;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private String title;
     private String author;
     private double price;
@@ -39,5 +39,11 @@ public class Book {
     // toStr
     public String toStr(){
         return "Book: [Title:" + title + "] [Author: " + author + "] [Price: $" + price + "]";
+    }
+
+    // implement to reuse sort fucntion
+    public int compareTo(Book other){
+        return (int) (this.getPrice() - other.getPrice()); // by price
+        //return this.getTitle().compareTo(other.getTitle()); // by title
     }
 }
