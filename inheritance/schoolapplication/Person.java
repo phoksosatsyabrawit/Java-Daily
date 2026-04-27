@@ -1,4 +1,4 @@
-package com.java.inheritance;
+package com.java.inheritance.schoolapplication;
 
 public class Person {
     protected String name;
