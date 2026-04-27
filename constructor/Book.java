@@ -16,9 +16,23 @@ public class Book implements Comparable<Book> {
 
     // Setter
     public void setTitle(String title){
+        if(title.trim().matches("\\d+")){
+            throw new IllegalArgumentException("Title must not be consist only number.");
+        }
+        String tTitle = title.trim();
+        if(!tTitle.trim().matches("[\\p{L}\\s'\\.\\-]+")){
+            throw new IllegalArgumentException("Title contain invalid character, only space, ', ., -, are allowed.");
+        }
         this.title = title;
     }
     public void setAuthor(String author){
+        if(author.trim().matches("\\d+")){
+            throw new IllegalArgumentException("Author must not be consist only number.");
+        }
+        String tAuthor = author.trim();
+        if(!tAuthor.trim().matches("[\\p{L}\\s'\\.\\-]+")){
+            throw new IllegalArgumentException("Author contain invalid character, only space, ', ., -, are allowed.");
+        }
         this.author = author;
     }
     public void setPrice(double price){
