@@ -4,6 +4,22 @@ public class Person {
     protected String name;
     protected String gender;
     protected int age;
+    protected String nationality = "Cambodia";
+
+    // Constructor with no-arg
+    public Person(){}
+
+    // Constructor with other-arg
+    public Person(String name, String gender){ 
+        this(name, gender,0);
+    }
+
+    // Constructor with param
+    public Person(String name, String gender, int age){
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
 
     // Setter
     public void setName(String name){
@@ -25,5 +41,10 @@ public class Person {
     }
     public int getAge(){
         return age;
+    }
+
+    @Override
+    public String toString() {
+        return "[name=" + name + "; gender=" + gender + "; age=" + age + "]";
     }
 }
