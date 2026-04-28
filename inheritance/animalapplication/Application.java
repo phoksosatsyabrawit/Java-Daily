@@ -1,4 +1,4 @@
-package com.java.inheritance;
+package com.java.inheritance.animalapplication;
 
 import java.text.Annotation;
 
