@@ -3,6 +3,7 @@ package com.java.inheritance.schoolapplication;
 public class Teacher extends Person {
     private double salary;
     private String nationality = "Vietnam";
+    final int HOUR = 50;
 
     // Setter
     public void setSalary(double salary){
@@ -16,7 +17,7 @@ public class Teacher extends Person {
 
     // Constructor from superclass
     public Teacher(){
-        super("Thida", "female",30);
+        super("Thida", Gender.FEMALE,30);
         this.salary = 200;
     }
 
@@ -27,5 +28,10 @@ public class Teacher extends Person {
 
     public void displayNationality(){
         System.out.println(super.nationality);
+    }
+
+    @Override
+    public void showInfo(){
+        System.out.println("This is from teacher class.");
     }
 }
