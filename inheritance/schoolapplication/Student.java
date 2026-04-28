@@ -2,26 +2,25 @@ package com.java.inheritance.schoolapplication;
 
 public class Student extends Person {
     
-    private String grade;
+    private Grade grade;
 
     // Setter
-    public void setGrade(String grade){
+    public void setGrade(Grade grade){
         this.grade = grade;
     }
 
     // Getter
-    public String getGrade(){
+    public Grade getGrade(){
         return grade;
     }
 
     // Constructor from superclass
     public Student(){
-        super("Dara", "Male", 18);
-        this.grade = "Junior";
+        super("Dara", Gender.MALE, 18);
     }
 
     @Override
     public String toString(){
-        return "Student " + super.toString() + " [grade=" + grade + "]";
+        return "Student " + super.toString() + " [grade=" + Grade.THIRD.getValue() + "]";
     }
 }
