@@ -2,7 +2,7 @@ package com.java.inheritance.schoolapplication;
 
 public class Person {
     protected String name;
-    protected String gender;
+    protected Gender gender;
     protected int age;
     protected String nationality = "Cambodia";
 
@@ -10,12 +10,12 @@ public class Person {
     public Person(){}
 
     // Constructor with other-arg
-    public Person(String name, String gender){ 
+    public Person(String name, Gender gender, Grade grade){ 
         this(name, gender,0);
     }
 
     // Constructor with param
-    public Person(String name, String gender, int age){
+    public Person(String name, Gender gender, int age){
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -25,7 +25,7 @@ public class Person {
     public void setName(String name){
         this.name = name;
     }
-    public void setGender(String gender){
+    public void setGender(Gender gender){
         this.gender = gender;
     }
     public void setAge(int age){
@@ -36,7 +36,7 @@ public class Person {
     public String getName(){
         return name;
     }
-    public String getGender(){
+    public Gender getGender(){
         return gender;
     }
     public int getAge(){
@@ -46,5 +46,9 @@ public class Person {
     @Override
     public String toString() {
         return "[name=" + name + "; gender=" + gender + "; age=" + age + "]";
+    }
+
+    public void showInfo(){
+        System.out.println("This is from person class.");
     }
 }

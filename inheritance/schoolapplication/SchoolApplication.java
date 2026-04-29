@@ -7,6 +7,8 @@ public class SchoolApplication {
 
         //System.out.println(teacher.toString());
         //System.out.println(student.toString());
-        teacher.displayNationality();
+        //teacher.displayNationality();
+        //teacher.showInfo();
+        System.out.println(student.toString());
     }
 }
