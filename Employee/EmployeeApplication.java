@@ -10,14 +10,18 @@ public class EmployeeApplication {
         int count = empservice.countempbyGender(emps, Gender.FEMALE);
         System.out.println("Count Female: " + count);
         System.out.println("\n# Calculation Bonus for Employee.");
-        empservice.printBonus(emps);
-        System.out.println("\n# Calculate Salary + Bonus for Employee.");
-        empservice.printSalary(emps);
-        System.out.println("\n# Calculate all Employee Salary.");
-        double payment = empservice.sumempPayment(emps);
-        System.out.println("Summary payment: $" + payment);
-        
-        
+        empservice.getbonuseachEmployee(emps);
+        System.out.println("\n# Calculation Salary + Bonus for Employee.");
+        empservice.getbonusplusSalary(emps);
+        double sumPay = empservice.sumempPayment(emps);
+        System.out.println("\nSummary payment: $" + sumPay);
+
+        //empservice.printBonus(emps);
+        //System.out.println("\n# Calculate Salary + Bonus for Employee.");
+        //empservice.printSalary(emps);
+        //System.out.println("\n# Calculate all Employee Salary.");
+        //double payment = empservice.sumempPayment(emps);
+        //System.out.println("Summary payment: $" + payment);
        
         /*EmployeeService empservice = new EmployeeService();
 

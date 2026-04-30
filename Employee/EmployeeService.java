@@ -25,19 +25,16 @@ public class EmployeeService{
         }
     }
 
-    public void printBonus(Employee[] emps){
+    // Version 1
+    /*public int countGenderEmp(Employee[] emps){
+        int countFemale = 0;
         for(int i=0; i<emps.length; i++){
-            double bonus = calculateBonus(emps[i]);
-            System.out.println(emps[i].toStr() + " , [bonus: $" + bonus + "]");
+            if(emps[i].getGender().equals(Gender.FEMALE)){
+                countFemale ++;
+            }
         }
-    }
-
-    public void printSalary(Employee[] emps){
-        for(int i=0; i<emps.length; i++){
-            double salary = calculateSalary(emps[i]);
-            System.out.println(emps[i].toStr() + " , [salary + bonus: $" + salary + "]");
-        }
-    }
+        return countFemale;
+    }*/
 
     // Version 2
     public int countempbyGender(Employee[] emps, Gender gender){
@@ -51,18 +48,6 @@ public class EmployeeService{
         return countGender;
     }
 
-    public double calculateBonus(Employee[] emps){
-        double bonus = 0.0;
-        for(int i=0; i<emps.length; i++){
-            switch (emps[i].getKind()) {
-            case FULL_TIME: bonus = emps[i].getSalary() * 0.05;break;
-            case PART_TIME: bonus = emps[i].getSalary() * 0.03;break;
-            case INTERNSHIP: bonus = emps[i].getSalary() * 0.02;break;
-            }
-       } 
-       return bonus;
-    }
-
     public double calculateBonus(Employee emp){
         double bonus = 0.0;
         switch (emp.getKind()){
@@ -71,20 +56,26 @@ public class EmployeeService{
         case INTERNSHIP: bonus = emp.getSalary() * 0.02;break;
         } 
         return bonus;
-    } 
-       
-    public double calculateSalary(Employee[] emps){
-        double salary = 0.0;
+    }
+
+    public void getbonuseachEmployee(Employee[] emps){
         for(int i=0; i<emps.length; i++){
-            salary = emps[i].getSalary() + calculateBonus(emps);
+            double bonus = calculateBonus(emps[i]);
+            System.out.println("[name: " + emps[i].getName() + ", bonus: $" + bonus + "]");
         }
-        return salary;
     }
 
     public double calculateSalary(Employee emps){
         double salary = 0.0;
         salary = emps.getSalary() + calculateBonus(emps);
         return salary;
+    }
+
+    public void getbonusplusSalary(Employee[] emps){
+        for(int i=0; i<emps.length; i++){
+            double bonusandSalary = calculateSalary(emps[i]);
+            System.out.println("[name: " + emps[i].getName() + ", salary + bonus: $" + bonusandSalary + "]");
+        }
     }
 
     public double sumempPayment(Employee[] emps){
@@ -94,15 +85,4 @@ public class EmployeeService{
         }
         return sumPayment;
     }
-
-    // Version 1
-    /*public int countGenderEmp(Employee[] emps){
-        int countFemale = 0;
-        for(int i=0; i<emps.length; i++){
-            if(emps[i].getGender().equals(Gender.FEMALE)){
-                countFemale ++;
-            }
-        }
-        return countFemale;
-    }*/
 }
