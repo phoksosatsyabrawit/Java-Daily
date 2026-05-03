@@ -11,18 +11,16 @@ public class Application {
         circle.draw();
         circle.draw(3.0);*/
 
-        Util util = new Util();
-
         //Polymorphism Variable
         Shape[] shape = new Shape[] {
             new Circle(3),
             new Rectangle(2,4),
             new Triangle(3,5,7)
         };
-        util.print(shape);
-        System.out.println("Total Area: " + util.gettotalofArea(shape));
+        Util.print(shape);
+        System.out.println("Total Area: " + Util.gettotalofArea(shape));
         Arrays.sort(shape);
         System.out.println("#Sorting by Area.");
-        util.print(shape);
+        Util.print(shape);
     }
 }
