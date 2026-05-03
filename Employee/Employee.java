@@ -26,8 +26,7 @@ public class Employee {
 
     // Setter
     public void setId(int id){
-        count++;
-        this.id = count;
+        this.id = id;
     }
     public void setName(String name){
         this.name = name;

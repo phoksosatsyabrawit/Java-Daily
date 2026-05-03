@@ -14,7 +14,7 @@ public class Person {
         this(name, gender,0);
     }
 
-    // Constructor with param
+    // Constructor with arg
     public Person(String name, Gender gender, int age){
         this.name = name;
         this.gender = gender;
