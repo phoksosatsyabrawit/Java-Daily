@@ -1,5 +1,7 @@
 package com.java.Polymorphism;
 
+import java.util.Comparator;
+
 public abstract class Shape implements Comparable<Shape> {
 
     abstract double getArea();
