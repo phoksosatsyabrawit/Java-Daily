@@ -4,12 +4,13 @@ import java.util.Scanner;
 public class Bank {
 
     private String bankName;
-    BankAccount[] bAccounts;
+    BankAccount[] accounts;
+    private int numberofAccounts;
 
     // Constructor
-    public Bank(String bankName, BankAccount[] bAccounts){
+    public Bank(String bankName, BankAccount[] accounts){
         this.bankName = bankName;
-        this.bAccounts = bAccounts;
+        this.accounts = accounts;
     }
 
     protected static BankAccount getAccount(){
@@ -33,7 +34,7 @@ public class Bank {
     }
 
     private BankAccount findAccount(String accNumber){
-        for(BankAccount bAccount : bAccounts){
+        for(BankAccount bAccount : accounts){
             if(bAccount.getaccNumber().equals(accNumber)){
                 return bAccount;
             }
@@ -72,9 +73,9 @@ public class Bank {
         deposit(targetAcc, amount);
     }
 
-    public void display(BankAccount[] bAccounts){
+    public void display(){
         System.out.println("================================ # Bank Accounts # ================================");
-        for(BankAccount bAccount : bAccounts){
+        for(BankAccount bAccount : accounts){
             System.out.println("Bank " + getbankName() + ": " + bAccount.toStr());
         }
     }
