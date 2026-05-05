@@ -5,7 +5,6 @@ public class Bank {
 
     private String bankName;
     BankAccount[] accounts;
-    private int numberofAccounts;
 
     // Constructor
     public Bank(String bankName, BankAccount[] accounts){
