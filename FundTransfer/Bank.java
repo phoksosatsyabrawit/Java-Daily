@@ -1,12 +1,20 @@
 package com.java.FundTransfer;
 import java.util.Scanner;
 
-public class Bank {
+public class Bank{
 
     private String bankName;
-    BankAccount[] accounts;
-
+    private static BankAccount[] accounts = new BankAccount[3];
+    {   
+        accounts[0] = new BankAccount("000000000001", "Elliot", 2500);
+        accounts[1] = new BankAccount("000000000002", "Darlene", 1800);
+        accounts[2] = new BankAccount("000000000003", "Tyrell", 2100);
+    }
+   
     // Constructor
+    public Bank(String bankName){
+        this.bankName = bankName;
+    }
     public Bank(String bankName, BankAccount[] accounts){
         this.bankName = bankName;
         this.accounts = accounts;
@@ -24,10 +32,15 @@ public class Bank {
         return account;
     }
 
-    protected static BankAccount[] openAccount(int n){
-        BankAccount[] accounts = new BankAccount[n];
-        for(int i=0; i<n; i++){
-            accounts[i]= getAccount();
+    // Insert new account into existing accounts
+    protected static BankAccount[] openAccount(int newacc){
+        BankAccount[] acc = new BankAccount[accounts.length + newacc];
+        for(int i=0; i<accounts.length; i++){
+            acc[i] = accounts[i];
+        }
+        for(int j=accounts.length; j<acc.length; j++){
+            acc[j] = getAccount();
+            accounts = acc;
         }
         return accounts;
     }
@@ -74,8 +87,8 @@ public class Bank {
 
     public void display(){
         System.out.println("================================ # Bank Accounts # ================================");
-        for(BankAccount bAccount : accounts){
-            System.out.println("Bank " + getbankName() + ": " + bAccount.toStr());
+        for(int i=0; i<accounts.length; i++){
+            System.out.println("Bank " + getbankName() + ": " + accounts[i].toStr());
         }
     }
 
