@@ -33,16 +33,14 @@ public class Bank{
     }
 
     // Insert new account into existing accounts
-    protected static BankAccount[] openAccount(int newacc){
-        BankAccount[] acc = new BankAccount[accounts.length + newacc];
+    protected static BankAccount[] openAccount(){
+        int n= 1;
+        BankAccount[] acc = new BankAccount[accounts.length + n];
         for(int i=0; i<accounts.length; i++){
             acc[i] = accounts[i];
         }
-        for(int j=accounts.length; j<acc.length; j++){
-            acc[j] = getAccount();
-            accounts = acc;
-        }
-        return accounts;
+        acc[acc.length - n] = getAccount();
+        return acc;
     }
 
     private BankAccount findAccount(String accNumber){

@@ -2,10 +2,9 @@ package com.java.FundTransfer;
 
 public class BankApplication {
     public static void main(String[] args){
-        int numberofAcc = 1;
         Bank existAcc = new Bank("ABA");
         existAcc.display();
-        BankAccount[] newAcc = Bank.openAccount(numberofAcc);
+        BankAccount[] newAcc = Bank.openAccount();
         Bank bank = new Bank("ABA", newAcc);
         System.out.println("\nNew account has been created successfully!\n");
         bank.display();
