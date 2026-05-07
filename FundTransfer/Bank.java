@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Bank{
 
     private String bankName;
-    private static BankAccount[] accounts = new BankAccount[3];
+    private BankAccount[] accounts = new BankAccount[3];
     {   
         accounts[0] = new BankAccount("000000000001", "Elliot", 2500);
         accounts[1] = new BankAccount("000000000002", "Darlene", 1800);
@@ -20,7 +20,7 @@ public class Bank{
         this.accounts = accounts;
     }
 
-    protected static BankAccount getAccount(){
+    protected BankAccount getAccount(){
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter account number: ");
         String accNumber = scan.nextLine();
@@ -33,7 +33,7 @@ public class Bank{
     }
 
     // Insert new account into existing accounts
-    protected static BankAccount[] openAccount(){
+    protected BankAccount[] openAccount(){
         int n= 1;
         BankAccount[] acc = new BankAccount[accounts.length + n];
         for(int i=0; i<accounts.length; i++){
