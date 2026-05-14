@@ -55,6 +55,7 @@ public class Bank{
     private boolean isEnoughBalance(BankAccount bAccount, double amount){
         return bAccount.getBalance() >= amount;
     }
+    
 
     private boolean isValidAmount(double amount){
         return amount > 0;
