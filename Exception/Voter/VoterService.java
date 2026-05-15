@@ -1,7 +1,5 @@
 package com.java.Exception.Voter;
 import java.util.Set;
-import java.io.File;
-import java.io.Writer;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.HashSet;
